@@ -1,0 +1,65 @@
+{
+  "list": [
+    {
+      "name": "start",
+      "message": "start",
+      "dateTime": "2022-05-07,12:56"
+    },
+    {
+      "message": "听我说,谢谢你",
+      "name": "爱人",
+      "dateTime": "2022-05-21,02:54"
+    },
+    {
+      "message": "222",
+      "name": "222",
+      "dateTime": "2022-05-21,02:54"
+    },
+    {
+      "message": "8778878",
+      "name": "899999999999",
+      "dateTime": "2022-05-21,12:29"
+    },
+    {
+      "message": "999",
+      "name": "11",
+      "dateTime": "2022-05-21,12:29"
+    },
+    {
+      "message": "111222222",
+      "name": "221212",
+      "dateTime": "2022-05-21,12:33"
+    },
+    {
+      "dateTime": "2022-05-21,12:52"
+    },
+    {
+      "message": "a22",
+      "name": "2222",
+      "dateTime": "2022-05-21,12:53"
+    }
+  ],
+  "str": [
+    {
+      "str": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+    }
+  ]
+}
+ // <div class="comments container">
+	// 		<ul class="list-group row">
+	// 		<% for(var i=0;i<list.length;i++){%>
+	// 		<li class="list-group-item ">
+	// 			<span class="text-primary"><%=list[i].name %></span>
+	// 			 <span class="text-success ">&nbsp;&nbsp;&nbsp;留言到 :&nbsp;&nbsp;&nbsp;</span> 
+	// 			 <span class="text-primary"><%=list[i].message %> </span>
+	// 			 <button type="button" style="float:right;  margin-right:-75px;"
+	// 			 class="btn btn-info" onclick="window.location.href='http://www.baidu.com'">删除</button>
+				 
+	// 			<span class=" text-success pull-right"> <%=list[i].dateTime %> </span>
+	// 		</li>
+	// 		<div>&nbsp;</div>
+			
+	// 		<% }%>
+	// 		</ul>
+			
+	// 	</div> 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>主页面</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css"
+		src="../data/data.json"/>
+	</head>
+	<style type="text/css">
+		body{background-color: #CCCCFF;
+		background-size: 100%;}
+		.home>img{
+			height:45px;
+			whith:45px;
+		}
+		.home{
+			 position:fixed;    
+			  
+			            left:10px;  
+			            top:0px;
+			                
+		}
+		#select_sql_test{
+			color:#67788;
+		}
+		/* .del{
+			float:right;
+		} */
+	/* .pull-right text-success {
+	  float: left; !important;
+	} */
+	</style>
+	<body onload="myFunction()">
+		
+		<div class="home"><img id="jump2" src="/images/home.png" alt=""></div>
+		<h1 class ="text-center text-primary">欢迎用户:  <span id="select_sql_test"></span>  来到库鲁卡卡留言区</h1>
+		<div class="header container">
+			<div class="page-header">
+				<h1 class="text-primary"><small class="pull-right"></small></h1>
+				<a class="btn btn-info btn-lg btn-block" href="/post">发言</a>
+			</div>
+			<!-- <h1><%=datas%></h1> -->
+			<div id="box"><span id="url"></span></div>
+			
+		</div>
+		
+		<div class="comments container">
+			<ul class="list-group row">
+			<% for(var i=0;i<data.length;i++){%>
+			<li class="list-group-item ">
+				<span class="text-primary"><%=data[i].message_name %></span>
+				 <span class="text-success ">&nbsp;&nbsp;&nbsp;留言到 :&nbsp;&nbsp;&nbsp;</span> 
+				 <span class="text-primary"><%=data[i].message_message %> </span>
+				<button type="button" style="float:right;  margin-right:-85px; margin-top:-8px "  
+		class="btn btn-info" onclick="window.location.href='/delete/<%= data[i].message_id %>'">删除</button>
+				 
+				<span id="zhi" class=" text-success pull-right"><%=data[i].message_dateTime %></span>
+			</li>
+			<div>&nbsp;</div>
+			
+			<% }%>
+			</ul>
+			
+		</div>
+		<!-- <button type="button" class="btn btn-info float-sm-right pull-right">删除</button> -->
+		<script type="text/javascript"src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			// <% for(var i=0;i<data.length;i++){%>
+			// $('#zhi').html("<%=data[i].message_dateTime %>").substring(10);
+			// <% }%>
+			
+			// var lourl = window.location.href;
+			// var box = document.getElementById("box")
+			// var h1 = document.createElement("h1")
+			// h1.innerText ="234"
+			// box.appendChild(h1)
+			// $("#url").text("像放的内容");
+			// function s(){
+			// document.getElementById("url").innerText = "hello world";
+			// }
+			// 正则表达式
+			// var data = “123123,213,12312,312,3,Cat,cat,dsfsdfs,”;
+			
+			// var reCat = /cat/i;
+			// ^a.*?b
+			// alert(reCat.exec(data)); //Cat
+			// http://127.0.0.1:3000/main?username=dandan&password=123456
+			
+			// var cc = /[^=.*?&]/i;
+			
+			// var pattern = /[^[?]*$/;
+			// var	str = 'http://127.0.0.1:3000/main?username=dandan&password=123456';
+			// function myFunction() {
+			//     var str = "ABC#123中文456def'"; 
+			//     var n = str.search(/[\u4e00-\u9fa5]/g);
+			//     document.getElementById("demo").innerHTML = n;
+			// }
+			// var e ='http://127.0.0.1:3000/main?username=dandan&password=123456';
+			var t = /[^[&]*$/g;
+			// console.log(pattern.test(str));
+			// alert(test);
+			// location.href = ''
+			var test = window.location.href;
+			var b = test.toString();
+			var q = b.replace(t.exec(b),"");
+			var y = q.replace("http://127.0.0.1:3000/main?username=","")
+			var p = y.replace("&","")
+			// var a = cc.exec(b);
+			$("#select_sql_test").text(p);
+
+			$(function() {
+				
+				 
+			    $('#jump2').on('click', function() {
+			        location.href = "/";
+			    })
+			})
+			
+			// var str = document.getElementById("zhi").value.substring(3,9);
+		</script>	
+		
+	</body>
+	
+</html>

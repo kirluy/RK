@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>入口</title>
+   <!-- <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js></script> -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	
+</head>
+<style type="text/css">
+		body{background-color: #CCCCFF;
+		background-size: 100%;}
+		 button {
+		     width:100px;
+		
+		     height:50px;
+		
+		     margin:50px;
+		
+		     border-radius:30px;
+		
+		}
+		.spikes {float:right;
+		            position: relative;
+		            background: #2c3e50;
+		            height: 10px;
+		            margin: 0 0%;
+		            width: 100%;
+		            display: flex;
+		            justify-content: center;
+		            align-items: center;
+		        }
+		 
+		        .spikes::after {
+		            content: '';
+		            position: absolute;
+		            right: 0;
+		            left: -0%;
+		            top: 100%;
+		            z-index: 0;
+		            display: block;
+		            height: 15px;
+		            background-size: 20px 100%;
+		            background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+		            background-position: 0 0;
+		        }
+				.le{
+					float:left;
+				}
+				.ri{
+					margin-top:200px;
+				}
+				
+		
+</style>
+<body>
+	<div class="sh"><section class="spikes">
+	    <div class="parent1">
+	        <div class="div1"></div>
+	    </div>
+	</section></div>
+    
+	
+    <div class="text-center"><button type="button"  id="jump">登录</button>
+	<button type="button"  id="jump1">注册</button></div>
+	<div class="ti"><h1 class="text-center border border-info">欢迎来到库鲁卡卡</h1></div>
+	<div class="le"><img src="/images/wg.png"></div>
+	
+	<div class="ri"><section class="spikes">
+    <div class="parent1">
+        <div class="div1"></div>
+    </div>
+</section></div>
+
+	<script type="text/javascript"src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#jump1').on('click', function() {
+                location.href = "/register";
+            })
+        })
+		$(function() {
+		    $('#jump').on('click', function() {
+		        location.href = "/login";
+		    })
+		})
+    </script>
+</body>
+</html>

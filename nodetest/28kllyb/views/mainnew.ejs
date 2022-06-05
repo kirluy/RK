@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>主页面</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css"
+		src="../data/data.json"/>
+	</head>
+	<style type="text/css">
+		body{background-color: #CCCCFF;
+		background-size: 100%;}
+		.home>img{
+			height:45px;
+			whith:45px;
+		}
+		.home{
+			 position:fixed;    
+			  
+			            left:10px;  
+			            top:0px;
+			                
+		}
+	
+	</style>
+	<body>
+		<div class="home"><img id="jump2" src="/images/home.png" alt=""></div>
+		<h1 class ="text-center text-primary">库鲁卡卡留言区</h1>
+		<div class="header container">
+			<div class="page-header">
+				<h1 class="text-primary"><small class="pull-right"></small></h1>
+				<a class="btn btn-info btn-lg btn-block" href="/post">发言</a>
+			</div>
+		</div>
+		<div class="comments container">
+			<ul class="list-group row">
+			<% for(var i=0;i<data.length;i++){%>
+			<li class="list-group-item ">
+				<span class="text-primary"><%=data[i].message_name %></span>
+				 <span class="text-success ">&nbsp;&nbsp;&nbsp;留言到 :&nbsp;&nbsp;&nbsp;</span> 
+				 <span class="text-primary"><%=data[i].message_message %> </span>
+				 <button type="button" style="float:right;  margin-right:-75px; margin-top:-6.5px;"
+				 class="btn btn-info" onclick="window.location.href='/delete/<%= data[i].message_id %>'">删除</button>
+				 		
+				 
+				<span id="zhi" class=" text-success pull-right"> <%=data[i].message_dateTime %> </span>
+			</li>
+			<div>&nbsp;</div>
+			
+			<% }%>
+			</ul>
+			
+		</div>
+		
+		<script type="text/javascript"src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+		   var test = window.location.href;
+		   var b = test.toString();
+		   var q = b.replace(t.exec(b),"");
+		   var y = q.replace("http://127.0.0.1:3000/main?username=","")
+		   var p = y.replace("&","")
+		   
+		   $("#select_sql_test").text(p);
+			$(function() {
+			    $('#jump2').on('click', function() {
+			        location.href = "/";
+			    })
+			})
+		</script>
+	</body>
+	
+</html>

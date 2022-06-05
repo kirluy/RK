@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登录页面</title>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style type="text/css">
+  	body{background-color: #CCCCFF;
+  	background-size: 100%;}
+	.cat{
+		float:left;
+		
+	}
+	.cat>img{
+		height:200px;
+		whith:200px;
+	}
+	.home>img{
+		height:45px;
+		whith:45px;
+	}
+	.home{
+		 position:fixed;    
+		  
+		            left:10px;  
+		            top:0px;
+		                
+	}
+	.spikes {float:right;
+	            position: relative;
+	            background: #2c3e50;
+	            height: 10px;
+	            margin: 0 0%;
+	            width: 100%;
+	            display: flex;
+	            justify-content: center;
+	            align-items: center;
+	        }
+	 
+	        .spikes::after {
+	            content: '';
+	            position: absolute;
+	            right: 0;
+	            left: -0%;
+	            top: 100%;
+	            z-index: 0;
+	            display: block;
+	            height: 15px;
+	            background-size: 20px 100%;
+	            background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+	            background-position: 0 0;
+	        }
+			.sh{
+				
+				margin-top:-60px;
+				margin-bottom:50px;
+			}
+  </style>
+  <body>
+	  <div class="home"><img id="jump2" src="/images/home.png" alt=""></div>
+	  <div class="sh"><section class="spikes">
+	      <div class="parent1">
+	          <div class="div1"></div>
+	      </div>
+	  </section></div>
+	  <!-- <h2>Please login</h2> -->
+    <div class="form-box">
+        <form action="http://127.0.0.1:3000/main" >
+			<!-- method="post" -->
+            <input type="text" name="username" value="" placeholder="请输入用户名">
+            <input type="password" name="password" value="" placeholder="请输入密码">
+            <input type="submit" name="" value="登录">
+        </form>
+        <div> 没有账号, <a href="/register">先注册</a></div>
+    </div>
+	<div class="cat"><img src="/images/cat.png"></div>
+	
+	<script type="text/javascript"src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+	   
+		$(function() {
+		    $('#jump2').on('click', function() {
+		        location.href = "/";
+		    })
+		})
+	</script>
+  </body>
+</html>
